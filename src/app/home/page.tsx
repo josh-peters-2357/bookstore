@@ -1,13 +1,10 @@
 'use client'
-import React, { Suspense } from 'react';
-import {Container} from '@mui/material';
+import React from 'react';
 import '../../app/globals.scss';
-import { useRouter,permanentRedirect,  redirect } from 'next/navigation'
-import { NavigationEvents } from '../NavigationEvents';
-import Link from 'next/link';
+import Menu from '../components/menu';
 
-export default function Home () {
-    const router = useRouter()
-    
-    permanentRedirect('/home')
+export default function Home() {
+  return (
+      <Menu/>
+  )
 }
