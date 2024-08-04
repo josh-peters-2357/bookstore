@@ -5,17 +5,19 @@ import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 import './globals.scss';
-import Base from "@/components/Base";
-import ReactDOM from "react-dom/client";
-import { BrowserRouter as Router } from "react-router-dom";
-import { Route, Routes } from "react-router-dom";
-import App from '../app/index.js';
+import Link from "next/link";
+import { NavigationEvents } from "./NavigationEvents";
+import { usePathname } from "next/navigation";
 
 export default function Home() {
+  var pathname = usePathname()
+  pathname = "/home"
+
   return (
     <main className="flex min-h-screen body">
-      <Base/>
-      <App/>
+      <Link href = "/home">
+        Testing
+      </Link>
     </main>
   );
 }
