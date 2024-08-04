@@ -1,0 +1,46 @@
+
+@import 'tailwind.css';
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-rgb: 0, 0, 0;
+    --max-width: 100%;
+    --max-height: 100%;
+  }
+}
+
+.main-fg-bg-colors {
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-rgb)); 
+}
+
+.max-w-h {
+    width: var(--max-width);
+    height: var(--max-height);
+}
+
+.no-padding {
+    padding: 0%;
+}
+
+
+body {
+    @extend .main-fg-bg-colors;
+    @extend .max-w-h;
+    @extend .no-padding;
+}
+
+base {
+    @extend .main-fg-bg-colors;
+    @extend .max-w-h;
+    @extend .no-padding;
+    max-width: false;
+    max-height: false;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}

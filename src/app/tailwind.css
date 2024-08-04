@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/*These got moved to a css file because I needed to associate a file type with
+tailwind, but it removes the theme coloring from all the symbols which is
+vim-level editing. So I just import this from my scss and associate css files with
+tailwind which shuts up VS and keeps my coloring.*/
