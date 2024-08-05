@@ -5,40 +5,14 @@
 
 @media (prefers-color-scheme: light) {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-rgb: 0, 0, 0;
-    --max-width: 100%;
-    --max-height: 100%;
+    --foreground-rgb: rgb(131, 0, 28);
+    --background-rgb: rgb(0, 163, 163);;
   }
 }
 
-.main-fg-bg-colors {
-  color: rgb(var(--foreground-rgb));
-  background: rgb(var(--background-rgb)); 
-}
-
-.max-w-h {
-    width: var(--max-width);
-    height: var(--max-height);
-}
-
-.no-padding {
-    padding: 0%;
-}
-
-
-body {
-    @extend .main-fg-bg-colors;
-    @extend .max-w-h;
-    @extend .no-padding;
-}
-
-base {
-    @extend .main-fg-bg-colors;
-    @extend .max-w-h;
-    @extend .no-padding;
-    max-width: false;
-    max-height: false;
+.menu {
+    color: var(--foreground-rgb);
+    background-color: var(--background-rgb);
 }
 
 @layer utilities {
@@ -47,20 +21,10 @@ base {
   }
 }
 
-book-icon {
-  display: 'flex';
-  flex-direction: row;
-  align-items: 'center';
-  flex-wrap: 'wrap';
-  min-width: fit-content;
-}
-
-acc {
-  min-width: fit-content;
-}
-
-book-accordion {
+.Accordion {
   direction: flex;
   flex-direction: row;
   margin: 2%;
+  color: var(--foreground-rgb);
+  background-color: var(--background-rgb);
 }
