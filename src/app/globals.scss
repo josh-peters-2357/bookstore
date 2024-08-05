@@ -21,10 +21,19 @@
   }
 }
 
+body {
+  padding: 0%;
+}
+
 .Accordion {
   direction: flex;
+  column-gap: 10px;
   flex-direction: row;
   margin: 2%;
   color: var(--foreground-rgb);
   background-color: var(--background-rgb);
+}
+
+.main-menu-items {
+  min-height: 60px;
 }
