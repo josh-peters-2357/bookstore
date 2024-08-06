@@ -3,17 +3,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@media (prefers-color-scheme: light) {
-  :root {
-    --foreground-rgb: rgb(131, 0, 28);
-    --background-rgb: rgb(0, 163, 163);;
-  }
-}
-
-.menu {
-    color: var(--foreground-rgb);
-    background-color: var(--background-rgb);
-}
+@media (prefers-color-scheme: light) {}
 
 @layer utilities {
   .text-balance {
@@ -22,18 +12,67 @@
 }
 
 body {
-  padding: 0%;
+  padding: 0px;
+  background-color: rgb(78, 44, 0)
 }
+
+/*:root {}*/
+
+
+.colors {
+  color: rgb(218, 176, 87);
+  background-color: rgb(29, 16, 0);
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.col-spacing {
+  column-gap: 10px;
+}
+
+.transparent-bg {
+  background-color: transparent;
+}
+
+.Line-1 {
+  padding: 2px 2px;
+  border: 2px solid rgb(29, 16, 0);
+  border-radius: 2;
+  background-color: rgb(29, 16, 0)
+}
+
+.Line-2 {
+  padding: 0px 0px;
+  width: 100%;
+  border: 1px solid rgb(218, 176, 87);
+  border-radius: 2;
+}
+
 
 .Accordion {
-  direction: flex;
-  column-gap: 10px;
-  flex-direction: row;
-  margin: 2%;
-  color: var(--foreground-rgb);
-  background-color: var(--background-rgb);
+  @extend .col-spacing;
+  @extend .colors;
+  min-width: 100%;
+  min-height: 60px;
+  padding: 5px;
 }
 
-.main-menu-items {
-  min-height: 60px;
+.AccordionSummary {
+  width: 100%;
+  text-align: right;
+  padding: 0%;
+  justify-content: space-evenly;
+  flex-wrap: nowrap;
+}
+
+.AccordionDetails {
+  padding:3%
 }
