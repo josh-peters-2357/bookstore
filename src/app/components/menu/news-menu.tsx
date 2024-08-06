@@ -6,30 +6,20 @@ import { GenerateListItem } from '../menu-helpers';
 import { Stack, Box } from '@mui/material';
 
 export default function NewsMenu () {   
-    const header = (
-      <Stack spacing={{ xs: 1, sm: 2 }}
-      direction="row" 
-      flexWrap="nowrap"
-      className='AccordionSummary'
-      >
-        <div>
-          News
-        </div>
-        <NewspaperIcon/>
-      </Stack>)
-
     const items = (
       <>
-        <Box className='Line-2'/>
         {GenerateListItem("/events", "Upcoming Events")}
         {GenerateListItem("/announcements", "Announcements")}
       </>  
     )
 
     return (
-      <CreateMenuItem 
-        header={header} 
-        items={items}
-        id={"news-menu"}/>
+      <Stack className='padding-5px'>
+        <CreateMenuItem 
+          name={"News"} 
+          icon={<NewspaperIcon/>}
+          items={items}
+          id={"news-menu"}/>
+      </Stack>
     )
 }

@@ -1,15 +1,13 @@
 import { useState, useEffect } from 'react';
 
-
-
 export default function useWindowDimensions() {
   const [isMobile, setIsMobile] = useState<boolean>(false)
 
 
   useEffect(() => {
     function handleResize() {
-        setIsMobile(window.screen.width <= 700)
-        console.log(window.screen.width <=700)
+        setIsMobile(window.screen.width <= 600)
+        console.log(window.screen.width <=600)
         console.log(isMobile)
     }
    

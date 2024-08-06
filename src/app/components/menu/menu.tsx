@@ -18,8 +18,8 @@ export default function Menu () {
         <MenuContext.Provider 
             value={{expanded: expanded, 
             handleChange: (panel: string) => (event: React.SyntheticEvent, newExpanded: boolean) => setExpanded(newExpanded ? panel : false)}}>
-            <Stack className={(isMobile ? ' flex-col ' : ' flex-row ') + "Accordion transparent-bg"}>
-                <Stack>
+            <Stack className={(isMobile ? ' flex-col d-flex justify-content-center ' : ' flex-row align-items-left') + "Accordion transparent-bg"}>
+                <Stack className='d-flex justify-content-center'>
                     <CatalogueMenu/>
                 </Stack>
                 <Stack>

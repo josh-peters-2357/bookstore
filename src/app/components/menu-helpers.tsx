@@ -1,22 +1,40 @@
 import React, { useContext, useState } from 'react';
-import { Accordion, AccordionDetails, AccordionSummary, Link, ListItem, ListItemButton, ListItemText, Stack } from '@mui/material';
+import { Accordion, AccordionDetails, AccordionSummary, Box, Link, ListItem, ListItemButton, ListItemText, Stack } from '@mui/material';
 import '../../app/globals.scss';
 import { MenuContext } from './menu/menu';
 import useWindowDimensions from './hooks/useWindowDimensions';
 
-export default function CreateMenuItem({ header, items, id }: { header: React.JSX.Element, items: React.JSX.Element, id: string }) {
+interface props {
+  name: string;
+  icon: React.JSX.Element;
+  items: React.JSX.Element;
+  id: string;
+}
+
+export default function CreateMenuItem(props: props) {
   const {expanded, handleChange} = useContext(MenuContext);
   
 
     return (
-        <Accordion expanded={expanded === 'panel1' + id} 
-                   onChange={handleChange('panel1' + id)}
-                   className='colors'>
+        <Accordion expanded={expanded === 'panel1' + props.id} 
+                   onChange={handleChange('panel1' + props.id)}
+                   className='colors formatter'>
             <AccordionSummary aria-controls="panel1-content"
-                              id={"panel1-header-" + id} className='colors'>
-              {header}
+                              id={"panel1-header-" + props.id} className='colors'>
+              <Stack spacing={{ xs: 1, sm: 2 }}
+                     direction="row" 
+                     flexWrap="nowrap"
+                     className='AccordionSummary'>
+                <div>
+                  {props.name}
+                </div>
+                {props.icon}
+              </Stack>
             </AccordionSummary>
-            <AccordionDetails className='AccordionDetails'>{items}</AccordionDetails>
+            <AccordionDetails className='AccordionDetails'>
+              <Box className='Line-2'/>
+              {props.items}
+            </AccordionDetails>
         </Accordion>
     )
 }
