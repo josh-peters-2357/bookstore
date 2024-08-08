@@ -1,0 +1,1 @@
+export const MOBILE_SCREEN_ASPECT_RATIO: number = 1.5;

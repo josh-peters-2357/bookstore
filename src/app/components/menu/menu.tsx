@@ -6,27 +6,28 @@ import CatalogueMenu from './catalogue-menu';
 import NewsMenu from './news-menu';
 import { createContext } from 'react';
 import ServicesMenu from './services-menu';
-import useWindowDimensions from '../hooks/useWindowDimensions';
+import useIsMobile from '../hooks/useWindowDimensions';
 import Image from 'next/image';
 
 export const MenuContext = createContext<{expanded: boolean|string, handleChange: Function}>({expanded: false, handleChange: ()=>{}});
 
 export default function Menu () {
     const [expanded, setExpanded] = React.useState<string | false>('panel1');
-    const isMobile = useWindowDimensions().isMobile
+    const isMobile = useIsMobile()
 
     return (
         <MenuContext.Provider 
             value={{expanded: expanded, 
             handleChange: (panel: string) => (event: React.SyntheticEvent, newExpanded: boolean) => setExpanded(newExpanded ? panel : false)}}>
-            <Stack className={(isMobile ? ' flex-col d-flex justify-content-center ' : ' flex-row align-items-left') + "Accordion transparent-bg"} id="main-menu-bar">
-                <Image 
-                    src="/images/librarylogo.png"
-                    width={120}
-                    height={60}
-                    alt="Picture of the author"
-                    >
-                </Image>
+            <Stack className={(isMobile ? 'AccordionMobile' : 'AccordionDesktop')} id="main-menu-bar">
+                <Stack className='MainMenuLogo'>
+                    <img 
+                        src="/images/librarylogo.png"
+                        alt="Picture of the author"
+                        className={isMobile ? 'MainMenuLogoMobile' : 'MainMenuLogoDesktop'}
+                        >
+                    </img>
+                </Stack>
                 <Stack>
                     <CatalogueMenu/>
                 </Stack>

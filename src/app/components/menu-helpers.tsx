@@ -18,7 +18,7 @@ export default function CreateMenuItem(props: props) {
     return (
         <Accordion expanded={expanded === 'panel1' + props.id} 
                    onChange={handleChange('panel1' + props.id)}
-                   className='colors formatter'>
+                   className='colors'>
             <AccordionSummary aria-controls="panel1-content"
                               id={"panel1-header-" + props.id} className='colors'>
               <Stack spacing={{ xs: 1, sm: 2 }}

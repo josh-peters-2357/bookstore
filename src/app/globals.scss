@@ -61,19 +61,24 @@ body {
 }
 
 
-.Accordion {
+.AccordionBase {
   @extend .col-spacing;
   @extend .colors;
-  min-width: 100%;
   min-height: 60px;
   padding: 5px;
+  background: transparent;
+  display: flex;
 }
 
+.AccordionMobile {
+  @extend .AccordionBase;
+  flex-direction: column;
+  justify-content: center;
+}
 
-.formatter{
-  min-width: 150px;
-  max-width: 300px;
-  justify-content: space-evenly;
+.AccordionDesktop {
+  flex-direction: row;
+  height: 60px;
 }
 
 .AccordionSummary {
@@ -82,9 +87,24 @@ body {
   padding: 0%;
   justify-content: space-evenly;
   flex-wrap: nowrap;
-  display:flex
+  display:flex;
+}
+
+.MainMenuLogoMobile {
+  width: 100%;
+}
+
+.MainMenuLogoDesktop {
+  width: 120px;
+  height: 60px;
 }
 
 .AccordionDetails {
   padding:3%
+}
+
+.MainMenuLogoImage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
