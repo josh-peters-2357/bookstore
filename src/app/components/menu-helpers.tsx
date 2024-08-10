@@ -11,6 +11,13 @@ interface props {
   id: string;
 }
 
+/** Creates an Accordion item with a title string on the left 
+ * and an icon on the right, as well as a list of expandable
+ * items that are passed in.
+ * 
+ * @param props 
+ * @returns 
+ */
 export default function CreateMenuItem(props: props) {
   const {expanded, handleChange} = useContext(MenuContext);
   

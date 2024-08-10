@@ -7,7 +7,7 @@ import NewsMenu from './news-menu';
 import { createContext } from 'react';
 import ServicesMenu from './services-menu';
 import useIsMobile from '../hooks/useWindowDimensions';
-import Image from 'next/image';
+import AccountMenu from './account-menu';
 
 export const MenuContext = createContext<{expanded: boolean|string, handleChange: Function}>({expanded: false, handleChange: ()=>{}});
 
@@ -20,22 +20,27 @@ export default function Menu () {
             value={{expanded: expanded, 
             handleChange: (panel: string) => (event: React.SyntheticEvent, newExpanded: boolean) => setExpanded(newExpanded ? panel : false)}}>
             <Stack className={(isMobile ? 'AccordionMobile' : 'AccordionDesktop')} id="main-menu-bar">
-                <Stack className='MainMenuLogo'>
-                    <img 
-                        src="/images/librarylogo.png"
-                        alt="Picture of the author"
-                        className={isMobile ? 'MainMenuLogoMobile' : 'MainMenuLogoDesktop'}
-                        >
-                    </img>
+                <Stack className={(!isMobile  ? 'AccordionDesktopStack' : '')}>
+                    <Stack className='MainMenuLogo'>
+                        <img 
+                            src="/images/librarylogo.png"
+                            alt="Picture of the author"
+                            className={isMobile ? 'MainMenuLogoMobile' : 'MainMenuLogoDesktop'}
+                            />
+                    </Stack>
+                    <Stack>
+                        <CatalogueMenu/>
+                    </Stack>
+                    <Stack>
+                        <NewsMenu/>
+                    </Stack>
+                    <Stack>
+                        <ServicesMenu/>
+                    </Stack>
                 </Stack>
-                <Stack>
-                    <CatalogueMenu/>
-                </Stack>
-                <Stack>
-                    <NewsMenu/>
-                </Stack>
-                <Stack>
-                    <ServicesMenu/>
+
+                <Stack className={(!isMobile  ? 'AccordionDesktopStack' : '')}>
+                    <AccountMenu/>
                 </Stack>
             </Stack>
         </MenuContext.Provider>

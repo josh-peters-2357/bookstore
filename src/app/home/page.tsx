@@ -9,6 +9,10 @@ export default function Home() {
     <>
       <Menu/>
       <Box className='Line-1'/>
+      <img
+          src="/images/library.jpg"
+          alt="AI-generated picture of a library haha"
+          className='ll'/>
     </>
   )
 }
