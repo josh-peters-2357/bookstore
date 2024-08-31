@@ -1,7 +1,12 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+//https://colorhunt.co/palette/f1e5d1dbb5b5c39898987070
+$color-primary: #F1E5D1;
+$color-secondary: #DBB5B5;
+$color-aux1: #C39898;
+$color-aux2: #987070;
 
 @media (prefers-color-scheme: light) {}
 
@@ -13,15 +18,23 @@
 
 body {
   padding: 0px;
-  background-color: rgb(78, 44, 0)
+  background-color: $color-primary;
 }
 
-/*:root {}*/
-
+:root {
+  --primary-color: $color-primary;
+  --primary-background-color: $color-aux2;
+  --secondary-color: $color-secondary;
+}
 
 .colors {
-  color: rgb(218, 176, 87);
-  background-color: rgb(29, 16, 0);
+  color: $color-aux2;
+  background-color: $color-primary;
+}
+
+.focused-colors {
+  color: $color-primary;
+  background-color: $color-aux2;
 }
 
 .flex-row {
@@ -43,17 +56,31 @@ body {
 }
 
 .Line-1 {
-  padding: 2px 2px;
-  border: 2px solid rgb(29, 16, 0);
+  border: 2px solid $color-aux2;
   border-radius: 2;
-  background-color: rgb(29, 16, 0)
+  background-color: $color-aux2;
 }
 
 .Line-2 {
   padding: 0px 0px;
   width: 100%;
-  border: 1px solid rgb(218, 176, 87);
+  border: 1px solid $color-primary;
   border-radius: 2;
+}
+
+h3 {
+  font-family:'Times New Roman', Times, serif;
+  font-size: x-large;
+}
+
+h5 {
+  font-family:'Times New Roman', Times, serif;
+  font-size: medium;
+  color: red;
+}
+
+.Avatar {
+  background-color: $color-aux2;
 }
 
 .padding-5px {
@@ -94,18 +121,8 @@ body {
   height: 60px;
 }
 
-.AccordionDetails {
-  padding:3%
-}
-
 .MainMenuLogoImage {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.ll {
-  width: 50%;
-  height: 50%;
-  max-height: 10%;
 }

@@ -3,14 +3,16 @@ import '../../../app/globals.scss';
 import NewspaperIcon from '@mui/icons-material/Newspaper';
 import CreateMenuItem from '../menu-helpers';
 import { GenerateListItem } from '../menu-helpers';
-import { Box, Stack } from '@mui/material';
+import { Stack } from '@mui/material';
 
 export default function ServicesMenu () {   
+  const id = "services-menu";
+
     const items = (
       <>
-        {GenerateListItem("/tech", "Printers and Computers")}
-        {GenerateListItem("/museums", "Museum Passes")}
-        {GenerateListItem("/meetingrooms", "Meeting Rooms")}
+        {GenerateListItem("/tech", "Printers and Computers", id)}
+        {GenerateListItem("/museums", "Museum Passes", id)}
+        {GenerateListItem("/meetingrooms", "Meeting Rooms", id)}
       </>  
     )
 
@@ -20,7 +22,7 @@ export default function ServicesMenu () {
           name={"Library Services"}
           icon={<NewspaperIcon/>} 
           items={items}
-          id={"services-menu"}/>
+          id={id}/>
       </Stack>
     )
 }

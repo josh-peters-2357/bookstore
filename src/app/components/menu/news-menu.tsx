@@ -3,13 +3,14 @@ import '../../../app/globals.scss';
 import NewspaperIcon from '@mui/icons-material/Newspaper';
 import CreateMenuItem from '../menu-helpers';
 import { GenerateListItem } from '../menu-helpers';
-import { Stack, Box } from '@mui/material';
+import { Stack, } from '@mui/material';
 
 export default function NewsMenu () {   
+  const id = "news-menu";
     const items = (
       <>
-        {GenerateListItem("/events", "Upcoming Events")}
-        {GenerateListItem("/announcements", "Announcements")}
+        {GenerateListItem("/events", "Upcoming Events", id)}
+        {GenerateListItem("/announcements", "Announcements", id)}
       </>  
     )
 
@@ -19,7 +20,7 @@ export default function NewsMenu () {
           name={"News"} 
           icon={<NewspaperIcon/>}
           items={items}
-          id={"news-menu"}/>
+          id={id}/>
       </Stack>
     )
 }

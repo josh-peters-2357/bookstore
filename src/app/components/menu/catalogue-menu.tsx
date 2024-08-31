@@ -2,14 +2,15 @@ import React from 'react';
 import '../../../app/globals.scss';
 import BookIcon from '@mui/icons-material/Book';
 import CreateMenuItem, { GenerateListItem } from '../menu-helpers';
-import { Box, Stack } from '@mui/material';
+import { Stack } from '@mui/material';
 
 export default function CatalogueMenu () {  
-    const items = (
+  const id = "catalogue-menu";  
+  
+  const items = (
       <>
-        
-        {GenerateListItem("/books", "Books")}
-        {GenerateListItem("/movies", "Movies")}
+        {GenerateListItem("/books", "Books", id)}
+        {GenerateListItem("/movies", "Movies", id)}
       </>  
     )
 
@@ -19,7 +20,7 @@ export default function CatalogueMenu () {
           name={"Catalogue"}
           icon={<BookIcon/>} 
           items={items}
-          id={"catalogue-menu"}/>
+          id={id}/>
         </Stack>
     )
 }

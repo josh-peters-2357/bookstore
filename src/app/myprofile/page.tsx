@@ -3,13 +3,11 @@ import React from 'react';
 import '../../app/globals.scss';
 import Menu from '../components/menu/menu';
 
-export default function Home() {
+export default function MyProfile() {
   return (
     <>
       <Menu/>
-      <img src="/images/library.jpg"
-           alt="AI-generated picture of a library haha"
-           className='libraryImage'/>
+      There will be more here, one day. For now, pretend being logged in does more.
     </>
   )
 }
